@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetshopMobileProgreso2.Pages.ProductosPage"
+             Title="Productos Disponibles"> 
+    <StackLayout Padding="16" Spacing="10">
+        <Image Source="logo.png" HeightRequest="150"/>
+        <ListView x:Name="listaProductos" ItemSelected="DetalleItem" RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" BackgroundColor="SkyBlue">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="productoimagen.png" HeightRequest="50" />
+                            <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="5">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Nombre: " FontAttributes="Bold"/>
+                                    <Label Text="{Binding Nombre}" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Descripción: " FontAttributes="Bold"/>
+                                    <Label Text="{Binding Descripcion}" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Precio: " FontAttributes="Bold"/>
+                                    <Label Text="{Binding Precio}" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                                    <Label Text="$"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ir al Carrito"
+                Margin="20"
+        Clicked="IrACarrito"
+        BackgroundColor="DarkBlue"
+        TextColor="White">
+        </Button>
+    </StackLayout>
+</ContentPage>

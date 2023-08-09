@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetshopMobileProgreso2.Pages.DetallesPage"
+             Title="Detalles del Producto">
+    <VerticalStackLayout BackgroundColor="SkyBlue" Padding="20" Spacing="10">
+        <Image
+            x:Name="imagen"
+            Source="productoimagen.png"
+            HeightRequest="150"
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="Nombre"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="32"
+            TextColor="#333333"
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="Descripcion"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            TextColor="#666666"
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="Precio"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            TextColor="#666666"
+            HorizontalOptions="Center" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Button Text="Regresar" 
+                    BackgroundColor="#CCCCCC"
+                    TextColor="#333333"
+                    Margin="8"
+                    Clicked="onClickRetroceder"
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Text="Agregar a Carrito"            
+                    Margin="8"
+                    Clicked="onClickAgregarACarrito"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
